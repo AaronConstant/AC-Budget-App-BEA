@@ -22,6 +22,14 @@ transactions.delete('/:transIndex',(req,res)=>{
     } else {
         res.json({error: "Transaction Not Found, Please try again ❌ "})
     }
+})
+
+transactions.put('/:transIndex', (req,res)=>{
+    const { transIndex } = req.params
+
+    transactionsArray[transIndex] = req.body;
+
+    res.status(200).json(transactionsArray[transIndex])
 
 })
 
