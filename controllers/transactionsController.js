@@ -4,11 +4,22 @@ const transactions = express.Router()
 
 const transactionsArray = require('../models/transactions')
 
-transactions.get('/', (req, res)=> {
+transactions.get('/', (req, res) => {
     res.json(transactionsArray)
 })
 
-transactions.post('/', (req,res)=>{
+transactions.get('/:transIndex', (req,res) => { 
+    const { transIndex } = req.params
+    if( transactionsArray[transIndex] ){
+        res.status(200).json(transactionsArray[transIndex])
+    } else {
+        res.status(404).json({error: "Transaction Not Found! "})
+
+    }
+
+})
+
+transactions.post('/', (req,res) => { 
     transactionsArray.push(req.body)
     res.status(201).json(transactionsArray[transactionsArray.length -1])
 })
@@ -16,7 +27,7 @@ transactions.post('/', (req,res)=>{
 transactions.delete('/:transIndex',(req,res)=>{
     const { transIndex } = req.params;
 
-    if ( parseInt(transactionsArray[transIndex]) ) {
+    if ( transactionsArray[transIndex] ) {
         transactionsArray.splice(transIndex, 1)
         res.json({message: "Transaction successfully Removed 💚 "})
     } else {
@@ -24,7 +35,7 @@ transactions.delete('/:transIndex',(req,res)=>{
     }
 })
 
-transactions.put('/:transIndex', (req,res)=>{
+transactions.put('/:transIndex', (req,res) => {
     const { transIndex } = req.params
 
     transactionsArray[transIndex] = req.body;
