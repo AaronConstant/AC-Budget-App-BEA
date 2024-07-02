@@ -4,7 +4,7 @@ module.exports = [
         id: "Yg312S" ,
         amount: 2000,
         date: "6/23/24",
-        from: "22221",
+        from: "The Bridge",
         category: "Income"
       },
       {
@@ -20,7 +20,7 @@ module.exports = [
         id: "s9DnMf" ,
         amount: -150,
         date: "1/17/24",
-        from: "grocery",
+        from: "Grocery",
         category: "food"
       }
 ]

@@ -1,8 +1,24 @@
 const express = require('express')
-
+const { faker } = require('@faker-js/faker')
 const transactions = express.Router()
 
 const transactionsArray = require('../models/transactions')
+
+//helper Function
+// const generateRandomListOfTransactions = (num) =>{
+
+//     for(let i= 0; i < num;i++) {
+//         const person = {
+
+
+//         }
+//     }
+
+// }
+
+// create a function to run initially when someone goes to frontEnd and add into array. 
+const randomName = faker.person.fullName()
+    // console.log(randomName);
 
 transactions.get('/', (req, res) => {
     res.json(transactionsArray)
@@ -20,7 +36,7 @@ transactions.get('/:transIndex', (req,res) => {
 })
 
 transactions.post('/', (req,res) => { 
-    transactionsArray.push(req.body)
+    transactionsArray.push({...req.body, engine: faker.person.firstName()})
     res.status(201).json(transactionsArray[transactionsArray.length -1])
 })
 
