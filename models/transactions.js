@@ -1,6 +1,6 @@
 module.exports = [
     {
-        name: "Income",
+        transaction: "Income",
         id: "Yg312S" ,
         amount: 2000,
         date: "6/23/24",
@@ -8,7 +8,7 @@ module.exports = [
         category: "Income"
       },
       {
-        name: "Credit Card Payment",
+        transaction: "Credit Card Payment",
         id: "Bx312S" ,
         amount: 100,
         date: "4/10/24",
@@ -16,7 +16,7 @@ module.exports = [
         category: "miscellaneous"
       }, 
       {
-        name: "Groceries",
+        transaction: "Groceries",
         id: "s9DnMf" ,
         amount: -150,
         date: "1/17/24",
