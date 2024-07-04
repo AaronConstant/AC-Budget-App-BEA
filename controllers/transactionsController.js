@@ -20,7 +20,7 @@ transactions.get('/:transIndex', (req,res) => {
 })
 //
 transactions.post('/', (req,res) => { 
-    transactionsArray.push({...req.body})
+    transactionsArray.push(req.body)
     res.status(201).json(transactionsArray[transactionsArray.length -1])
 })
 //

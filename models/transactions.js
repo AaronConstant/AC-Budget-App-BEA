@@ -1,4 +1,4 @@
-module.exports = [
+ [
     {
         transaction: "Income",
         id: "Yg312S" ,
