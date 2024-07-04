@@ -13,7 +13,7 @@ module.exports = [
         amount: 100,
         date: "4/10/24",
         from: "Bestfriend Linda",
-        category: "miscellaneous"
+        category: "Other"
       }, 
       {
         transaction: "Groceries",
